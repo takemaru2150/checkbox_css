@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        input {
+            display: none;
+        }
+
+        label {
+            color: #000;
+            display: inline-block;
+            position: relative;
+            margin: 0 6px 16px 0;
+            padding: 12px 15px 12px 48px;
+            border: 1px solid #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(17, 5, 8, 0.35);
+            line-height: 1.2;
+            text-align: left;
+            background: #f0efed none;
+            cursor: pointer;
+            transition-property: color, background-color;
+            transition-duration: 0.1s;
+        }
+
+        label::before {
+            position: absolute;
+            top: 20px;
+            left: 14px;
+            width: 22px;
+            height: 22px;
+            margin: -10px 0 0 0;
+            border: 1px solid #ffffff;
+            box-shadow: 0 1px 2px rgba(51, 51, 51, 0.7);
+            line-height: 100%;
+            content: "";
+            background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#ffffff));
+            background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff);
+        }
+        input:checked + label {
+            border: 1px solid #00508e;
+            border-radius: 24px;
+            box-shadow: 0 1px 2px rgba(51, 51, 51, 0.5);
+            color: #ffffff;
+            font-weight: bold;
+            background: #00508e none;
+        }
+
+        input:checked + label::after {
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            width: 22px;
+            height: 22px;
+            content: "";
+            background: url(./check.svg) no-repeat 0 0;
+            background-size: 22px 16px;
+        }
+
+        button {
+            display: block;
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px 0 10px 0;
+            border-width: 2px 2px 2px 2px;
+            border-style: solid;
+            border-color: #c81c14;
+            border-radius: 2px;
+            box-sizing: border-box;
+            box-shadow: 0 0 1px transparent;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            background: #c81c14 none;
+            cursor: pointer;
+            transition-property: color, background-color;
+            transition-duration: 0.1s;
+        }
+        button:hover {
+            color: #c81c14;
+            text-decoration: none;
+            background: #ffffff none;
+        }
+
+        p::after {
+            display: inline-block;
+            position: absolute;
+            top: 40%;
+            right: 0;
+            margin: 0 20px 0 0;
+            color: #ffffff;
+            font: normal 125%/1 FontAwesome;
+            content: ">";
+            transition-property: color, background-color;
+            transition-duration: 0.1s;
+        }
+
+        button:hover > p::after {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="field_1905913" id="privacy1" value="0" tabindex="8">
+    <label for="privacy1">同意する</label>
+
+    <div style="display: flex;">
+        <input type="hidden" name="code" value="utf8">
+        <button type="submit" name="submit" tabindex="7"><p>送信する</p></button>
+    </div>
+</body>
+</html>
